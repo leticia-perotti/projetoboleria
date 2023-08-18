@@ -1,0 +1,1 @@
+alter table ingrediente add column descricao varchar(100) not null;

@@ -18,7 +18,7 @@ data class BoloEntity (
     @JoinColumn(name = "decoracao")
     val decoracao: DecoracaoEntity,
 
-    @OneToMany(cascade = [CascadeType.ALL], mappedBy = "bolo")
+   /* @OneToMany(cascade = [CascadeType.ALL], mappedBy = "bolo")
     //@JoinColumn(name = "bolo", referencedColumnName = "bolo")
     val coberturas: List<BoloCoberturaEntity>,
 
@@ -28,7 +28,7 @@ data class BoloEntity (
 
     @OneToMany(cascade = [CascadeType.ALL], mappedBy = "bolo")
     //@JoinColumn(name = "bolo", referencedColumnName = "bolo")
-    val recheio: List<BoloRecheioEntity>,
+    val recheio: List<BoloRecheioEntity>,*/
 
 
     )

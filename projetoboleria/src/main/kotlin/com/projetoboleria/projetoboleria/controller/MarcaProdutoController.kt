@@ -35,7 +35,6 @@ class MarcaProdutoController (
     ): MarcaProdutoEntity {
         return marcaProdutoService.salvaMarca(marca)
     }
-    //TESTAR
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     fun editaMarca(
@@ -43,7 +42,6 @@ class MarcaProdutoController (
     ): MarcaProdutoEntity {
         return marcaProdutoService.editaMarca(marca)
     }
-    //TESTAR
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun excluiMarca(

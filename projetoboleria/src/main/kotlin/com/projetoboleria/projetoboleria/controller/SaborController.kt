@@ -32,7 +32,7 @@ class SaborController (
     ): SaborEntity{
         return saborService.salvaSabor(sabor)
     }
-    //TESTAR
+
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     fun editaSabor(
@@ -40,7 +40,7 @@ class SaborController (
     ): SaborEntity {
         return saborService.editaSabor(sabor)
     }
-    //TESTAR
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun excluiSabor(

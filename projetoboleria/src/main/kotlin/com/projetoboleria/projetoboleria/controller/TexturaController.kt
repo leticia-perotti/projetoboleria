@@ -41,7 +41,7 @@ class TexturaController (
     ): TexturaEntity{
         return texturaService.salvaTextura(textura)
     }
-    //Testar
+
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     fun editaTextura(
@@ -50,7 +50,7 @@ class TexturaController (
         return texturaService.editaTextura(textura)
     }
 
-    //Testar
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun excluiTextura(

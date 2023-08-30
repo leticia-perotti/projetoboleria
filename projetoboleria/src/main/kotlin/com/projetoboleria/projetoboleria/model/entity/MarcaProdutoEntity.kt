@@ -10,6 +10,7 @@ data class MarcaProdutoEntity (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int?,
 
+    val descricao: String,
     val nivelQualidade: QualidadeNivel
 
         )

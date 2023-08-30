@@ -1,6 +1,7 @@
 package com.projetoboleria.projetoboleria.model.dto
 
-data class SaborDTO (
+data class MarcaProdutoDTO (
     val id: Int?,
     val descricao: String,
+    val nivelQualidade: String
         )

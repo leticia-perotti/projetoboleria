@@ -23,5 +23,11 @@ class MarcaProdutoMapper {
         )
     }
 
+    fun entityToMarcaProdutoDTO(marca: MarcaProdutoEntity): MarcaProdutoDTO{
+        return MarcaProdutoDTO(
+            marca.id, marca.descricao, marca.nivelQualidade.toString()
+        )
+    }
+
 
 }

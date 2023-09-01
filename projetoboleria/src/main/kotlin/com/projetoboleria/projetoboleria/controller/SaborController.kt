@@ -29,7 +29,7 @@ class SaborController (
     @ResponseStatus(HttpStatus.CREATED)
     fun SaborEntity(
         @RequestBody sabor: SaborDTO
-    ): SaborEntity{
+    ): SaborDTO{
         return saborService.salvaSabor(sabor)
     }
 
@@ -37,7 +37,7 @@ class SaborController (
     @ResponseStatus(HttpStatus.OK)
     fun editaSabor(
         @RequestBody sabor: SaborDTO
-    ): SaborEntity {
+    ): SaborDTO {
         return saborService.editaSabor(sabor)
     }
 

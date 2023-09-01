@@ -26,17 +26,21 @@ class MarcaProdutoService(
         return marca?.let { marcaProdutoMapper.ajustaMarcaProdutoDTO(it) }
     }
 
-    fun salvaMarca(marca: MarcaProdutoFormDTO): MarcaProdutoEntity{
+    fun salvaMarca(marca: MarcaProdutoFormDTO): MarcaProdutoDTO{
         marca.id = null
-        return marcaProdutoRepository.save(
+        val entidade = marcaProdutoRepository.save(
             marcaProdutoMapper.marcaProdutoFormDTOtoEntity(marca)
         )
+
+        return marcaProdutoMapper.entityToMarcaProdutoDTO(entidade)
     }
 
-    fun editaMarca(marca: MarcaProdutoFormDTO): MarcaProdutoEntity{
-        return marcaProdutoRepository.save(
+    fun editaMarca(marca: MarcaProdutoFormDTO): MarcaProdutoDTO{
+        val entidade = marcaProdutoRepository.save(
             marcaProdutoMapper.marcaProdutoFormDTOtoEntity(marca)
         )
+
+        return marcaProdutoMapper.entityToMarcaProdutoDTO(entidade)
     }
 
     fun excluiMarca(id: Int){

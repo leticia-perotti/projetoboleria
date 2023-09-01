@@ -23,16 +23,19 @@ class SaborService(
         saborRepository.deleteById(id)
     }
 
-    fun editaSabor(sabor: SaborDTO): SaborEntity{
-        return saborRepository.save(
+    fun editaSabor(sabor: SaborDTO): SaborDTO{
+        val sabor = saborRepository.save(
             saborMapper.saborDTOtoEntity(sabor)
         )
+        return saborMapper.entityToDTO(sabor)
     }
 
-    fun salvaSabor(sabor: SaborDTO): SaborEntity{
+    fun salvaSabor(sabor: SaborDTO): SaborDTO{
         sabor.id = null
-        return saborRepository.save(
+        val sabor = saborRepository.save(
             saborMapper.saborDTOtoEntity(sabor)
         )
+
+        return saborMapper.entityToDTO(sabor)
     }
 }

@@ -11,4 +11,10 @@ class SaborMapper {
             sabor.id, sabor.descricao
         )
     }
+
+    fun entityToDTO(entidade: SaborEntity): SaborDTO{
+        return SaborDTO(
+            entidade.id, entidade.descricao
+        )
+    }
 }

@@ -32,14 +32,14 @@ class MarcaProdutoController (
     @ResponseStatus(HttpStatus.CREATED)
     fun salvaMarca(
         @RequestBody marca: MarcaProdutoFormDTO
-    ): MarcaProdutoEntity {
+    ): MarcaProdutoDTO {
         return marcaProdutoService.salvaMarca(marca)
     }
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     fun editaMarca(
         @RequestBody marca: MarcaProdutoFormDTO
-    ): MarcaProdutoEntity {
+    ): MarcaProdutoDTO {
         return marcaProdutoService.editaMarca(marca)
     }
     @DeleteMapping("/{id}")

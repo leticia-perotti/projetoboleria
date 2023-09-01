@@ -2,12 +2,14 @@ package com.projetoboleria.projetoboleria.service
 
 import com.projetoboleria.projetoboleria.model.dto.SaborDTO
 import com.projetoboleria.projetoboleria.model.entity.SaborEntity
+import com.projetoboleria.projetoboleria.model.mapper.SaborMapper
 import com.projetoboleria.projetoboleria.repository.SaborRepository
 import org.springframework.stereotype.Service
 
 @Service
 class SaborService(
-    private val saborRepository: SaborRepository
+    private val saborRepository: SaborRepository,
+    private val saborMapper: SaborMapper
 ) {
     fun retornaTodosSabores(): List<SaborDTO>? {
         return saborRepository.retornaTodosSabores()
@@ -23,17 +25,14 @@ class SaborService(
 
     fun editaSabor(sabor: SaborDTO): SaborEntity{
         return saborRepository.save(
-            SaborEntity(
-                sabor.id, sabor.descricao
-            )
+            saborMapper.saborDTOtoEntity(sabor)
         )
     }
 
     fun salvaSabor(sabor: SaborDTO): SaborEntity{
+        sabor.id = null
         return saborRepository.save(
-            SaborEntity(
-                null, sabor.descricao
-            )
+            saborMapper.saborDTOtoEntity(sabor)
         )
     }
 }

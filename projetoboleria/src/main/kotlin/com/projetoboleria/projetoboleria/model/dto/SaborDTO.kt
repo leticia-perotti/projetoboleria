@@ -1,6 +1,6 @@
 package com.projetoboleria.projetoboleria.model.dto
 
 data class SaborDTO (
-    val id: Int?,
+    var id: Int?,
     val descricao: String,
         )

@@ -17,6 +17,6 @@ abstract class Abstract(
     @JoinColumn(name = "textura")
     val textura: TexturaEntity,
 
-    val observacao: String
+    val observacao: String?
 
 )
